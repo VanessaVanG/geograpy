@@ -26,7 +26,7 @@ class PlaceContext(object):
             "CREATE TABLE cities(geoname_id INTEGER, continent_code TEXT, continent_name TEXT, country_iso_code TEXT, country_name TEXT, subdivision_iso_code TEXT, subdivision_name TEXT, city_name TEXT, metro_code TEXT, time_zone TEXT)"
         )
         cur_dir = os.path.dirname(os.path.realpath(__file__))
-        with io.open(cur_dir + "/data/GeoLite2-City-Locations.csv", "rt", encoding='utf-8', errors='ignore') as info:
+        with io.open(cur_dir + "/data/GeoLite2-City-Locations.csv", "rt", errors='ignore') as info:
             reader = csv.reader(info)
             for row in reader:
                 cur.execute(
