@@ -1,4 +1,5 @@
 import os
+import io
 import csv
 import pycountry
 import sqlite3
@@ -50,7 +51,7 @@ class PlaceContext(object):
 
     def correct_country_mispelling(self, s):
         cur_dir = os.path.dirname(os.path.realpath(__file__))
-        with open(cur_dir + "/data/ISO3166ErrorDictionary.csv", "rt", encoding='utf-8', errors='ignore') as info:
+        with io.open(cur_dir + "/data/ISO3166ErrorDictionary.csv", "rt", encoding='utf-8', errors='ignore') as info:
             reader = csv.reader(info)
             for row in reader:
                 if s in remove_non_ascii(row[0]):
