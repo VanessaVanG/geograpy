@@ -1,5 +1,4 @@
 import os
-import io
 import csv
 import pycountry
 import sqlite3
